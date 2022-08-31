@@ -107,3 +107,24 @@ function getRemainder(difference) {
     
     
 }
+
+const btn = document.querySelector("#button");
+let clicked = false;
+btn.addEventListener('click', (e) => {
+    if(!clicked){
+    document.querySelector("#nav").classList.add('toggleon')
+    return clicked = true;
+    }
+    document.querySelector("#nav").classList.remove('toggleon');
+    return clicked = false;
+})
+
+document.querySelector("#nav").addEventListener('click', (e) => {
+    if(clicked){
+        document.querySelector("#nav").classList.remove('toggleon')
+        // console.log(document.querySelector("#nav").classList)
+        clicked = false;
+    }
+})
+
+
