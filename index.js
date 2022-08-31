@@ -109,20 +109,21 @@ function getRemainder(difference) {
 }
 
 const btn = document.querySelector("#button");
+const nav = document.querySelector("#nav"); 
 let clicked = false;
 btn.addEventListener('click', (e) => {
     if(!clicked){
-    document.querySelector("#nav").classList.add('toggleon')
-    return clicked = true;
+        nav.classList.remove('toggleoff');
+        nav.classList.add('toggleon');
+        return clicked = true;
     }
-    document.querySelector("#nav").classList.remove('toggleon');
+    nav.classList.add('toggleoff');
     return clicked = false;
 })
 
-document.querySelector("#nav").addEventListener('click', (e) => {
+nav.addEventListener('click', (e) => {
     if(clicked){
-        document.querySelector("#nav").classList.remove('toggleon')
-        // console.log(document.querySelector("#nav").classList)
+        nav.classList.add('toggleoff');
         clicked = false;
     }
 })

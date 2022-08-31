@@ -9,6 +9,8 @@
 body{
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .header{
@@ -127,7 +129,7 @@ body{
         display: block;
     }
     #button{
-
+        margin-left: 1rem;
     }
     #button:hover{
         cursor: pointer;
@@ -150,7 +152,8 @@ body{
 
     }
     #content{
-        height: 70vh;
+        width: 80%;
+        height: 65vh;
     }
 }
 
@@ -168,5 +171,20 @@ body{
     to{
         /* width: 100%; */
         transform: translatex(0);
+    }
+}
+.toggleoff{
+    /* visibility: visible; */
+    animation: transoff .25s forwards linear;
+    z-index: 1000;
+}
+@keyframes transoff{
+    from{
+        /* width: 0; */
+        transform: translatex(0rem);
+    }
+    to{
+        /* width: 100%; */
+        transform: translatex(-50rem);
     }
 }
